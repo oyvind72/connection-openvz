@@ -34,7 +34,7 @@ class Connection(object):
    def connect(self, port=None):
       return self
 
-   def exec_command(self,cmd,tmp_path,sudo_user=None,sudoable=False,executable='/bin/sh',in_data=None,su=None,su_user=None):
+   def exec_command(self,cmd,tmp_path,sudo_user=None,sudoable=False,executable='/bin/sh',in_data=None,su=None,su_user=None,become_user=None):
       if in_data:
          raise errors.AnsibleError("Internal Error: this module does not support optimized module pipelining.")
       if executable:
